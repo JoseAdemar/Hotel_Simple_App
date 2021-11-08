@@ -10,13 +10,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Entity
 @Data
+@NoArgsConstructor
+@Entity
 @Table(name = "guest")
 public class Guest extends PanacheEntityBase {
 
@@ -32,6 +35,7 @@ public class Guest extends PanacheEntityBase {
 	@Size(max = 50)
 	private String lastName;
 
+	@Past
 	@NotBlank
 	@JsonbDateFormat(value = "yyyy/MM/dd")
 	private LocalDate dateOfBirth;
