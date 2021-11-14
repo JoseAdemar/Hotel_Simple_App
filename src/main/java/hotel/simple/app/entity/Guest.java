@@ -3,6 +3,7 @@ package hotel.simple.app.entity;
 import java.time.LocalDate;
 
 import javax.json.bind.annotation.JsonbDateFormat;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -41,6 +42,7 @@ public class Guest extends PanacheEntityBase {
 	private LocalDate dateOfBirth;
 
 	@Email
+	@Column(unique = true)
 	private String email;
 	
 	private String phoneNumber;
