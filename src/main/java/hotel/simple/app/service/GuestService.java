@@ -9,7 +9,7 @@ public interface GuestService {
 	
 	Guest create(Guest guest);
 	
-	Guest update(Long id, Guest guest);
+	Guest update(Guest guest);
 	
 	List<Guest> findAll();
 	

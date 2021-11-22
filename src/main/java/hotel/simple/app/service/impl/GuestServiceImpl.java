@@ -36,10 +36,10 @@ public class GuestServiceImpl implements GuestService {
 
 	@Override
 	@Transactional
-	public Guest update(Long id, Guest guest) {
-		LOG.debugf("Request to update Guest : {}", id);
+	public Guest update(Guest guest) {
+		LOG.debugf("Request to update Guest : {}", guest);
 
-		Optional<Guest> guestOp = guestRepository.findByIdOptional(id);
+		Optional<Guest> guestOp = guestRepository.findByIdOptional(guest.getId());
 
 		if (guestOp.isEmpty()) {
 
@@ -54,10 +54,9 @@ public class GuestServiceImpl implements GuestService {
 		getGuest.setEmail(guest.getEmail());
 		getGuest.setPhoneNumber(guest.getPhoneNumber());
 		
-		
 		guestRepository.persist(getGuest);
+		
 		return getGuest;
-
 	}
 
 	@Override
@@ -79,7 +78,6 @@ public class GuestServiceImpl implements GuestService {
 		}
 
 		return guestOp;
-
 	}
 
 	@Override
