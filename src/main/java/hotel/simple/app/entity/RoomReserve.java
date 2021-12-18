@@ -1,29 +1,34 @@
 package hotel.simple.app.entity;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Entity;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
 @Entity
-@Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@NoArgsConstructor
-public class Room {
+@Data
+public class RoomReserve {
 
 	@Id
-	@EqualsAndHashCode.Include
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@EqualsAndHashCode.Include
 	private Long id;
-
-	private Integer roomNumber;
-
-	@Enumerated
-	private RoomStatus roomStatus;
-
+	
+	private LocalDateTime initialDate;
+	
+	private LocalDateTime finalDate;
+	
+	@OneToOne
+	private Room room;
+	
+	@OneToOne
+	private Guest guest;
+	 
 }
