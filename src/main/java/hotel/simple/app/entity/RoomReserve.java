@@ -6,14 +6,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Entity
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@NoArgsConstructor
 public class RoomReserve {
 
 	@Id
@@ -25,10 +27,10 @@ public class RoomReserve {
 	
 	private LocalDateTime finalDate;
 	
-	@OneToOne
+	@ManyToOne
 	private Room room;
 	
-	@OneToOne
+	@ManyToOne
 	private Guest guest;
 	 
 }
