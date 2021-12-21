@@ -20,7 +20,7 @@
 		<surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
 		
 		<!-- MapStruct version -->
-    	<org.mapstruct.version>1.5.0.Beta1</org.mapstruct.version>
+    	<org.mapstruct.version>1.5.0.Beta2</org.mapstruct.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -92,6 +92,14 @@
         	<artifactId>mapstruct</artifactId>
         	<version>${org.mapstruct.version}</version>
     	</dependency>
+    	
+    	<!-- MapStruct processor -->
+    	<dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <version>${org.mapstruct.version}</version>
+            <scope>provided</scope>
+        </dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -115,7 +123,19 @@
 				<version>${compiler-plugin.version}</version>
 				<configuration>
 					<parameters>${maven.compiler.parameters}</parameters>
-				</configuration>
+					<annotationProcessorPaths>
+						<path>
+	                        <groupId>org.projectlombok</groupId>
+	                        <artifactId>lombok</artifactId>
+	                        <version>1.18.22</version>
+	                    </path>
+	                    <path>
+	                        <groupId>org.mapstruct</groupId>
+	                        <artifactId>mapstruct-processor</artifactId>
+	                        <version>${org.mapstruct.version}</version>
+	                    </path>
+	                </annotationProcessorPaths>
+                </configuration>
 			</plugin>
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>

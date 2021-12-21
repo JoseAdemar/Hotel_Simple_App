@@ -1,10 +1,11 @@
 package hotel.simple.app.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
@@ -13,6 +14,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Table(name = "room")
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor
@@ -25,9 +27,10 @@ public class Room {
 
 	@NotNull
 	@Min(value = 0)
-	private Integer number;
+	@Column(name = "room_number")
+	private Integer roomNumber;
 
-	@Enumerated
-	private RoomStatus status;
+	// @Enumerated
+	// private RoomStatus status;
 
 }
