@@ -2,7 +2,6 @@ package hotel.simple.app.web.rest;
 
 import java.util.List;
 
-import javax.inject.Inject;
 import javax.validation.Valid;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -29,8 +28,11 @@ public class GuestResource {
 
 	private static final Logger LOG = Logger.getLogger(GuestResource.class);
 
-	@Inject
-	private GuestService guestService;
+	private final GuestService guestService;
+	
+	public GuestResource(GuestService guestService) {
+		this.guestService = guestService;
+	}
 
 	@POST
 	public Response createGuest(@RequestBody @Valid Guest guest) {

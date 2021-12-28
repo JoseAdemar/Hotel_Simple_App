@@ -1,6 +1,5 @@
 package hotel.simple.app.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,10 +26,6 @@ public class Room {
 
 	@NotNull
 	@Min(value = 0)
-	@Column(name = "room_number")
-	private Integer roomNumber;
-
-	// @Enumerated
-	// private RoomStatus status;
+	private Integer number;
 
 }

@@ -50,7 +50,7 @@ public class GuestServiceImpl implements GuestService {
 
 		getGuest.setFirstName(guest.getFirstName());
 		getGuest.setLastName(guest.getLastName());
-		getGuest.setDateOfBirth(guest.getDateOfBirth());
+		getGuest.setBirthDate(guest.getBirthDate());
 		getGuest.setEmail(guest.getEmail());
 		getGuest.setPhoneNumber(guest.getPhoneNumber());
 		

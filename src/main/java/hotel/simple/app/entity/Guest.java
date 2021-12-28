@@ -43,8 +43,8 @@ public class Guest {
 	@Past
 	@NotBlank
 	@JsonbDateFormat(value = "yyyy/MM/dd")
-	@Column(name = "date_of_birth")
-	private LocalDate dateOfBirth;
+	@Column(name = "birth_date")
+	private LocalDate birthDate;
 
 	@Email
 	@Column(unique = true)
