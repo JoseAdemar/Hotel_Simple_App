@@ -6,19 +6,17 @@ quarkus:
     jdbc:
       url: jdbc:mysql://localhost:3306/hotel_simple_app?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
       driver: com.mysql.cj.jdbc.Driver
-      
-    hibernate-orm:
-      dialect: org.hibernate.dialect.MySQL8Dialect
-      jdbc:
-        timezone: UTC
+  hibernate-orm:
+    dialect: org.hibernate.dialect.MySQL8Dialect
+    jdbc:
+      timezone: UTC
     
   # Flyway minimal config properties
   flyway:
     migrate-at-start: true
 
     # Flyway optional config properties
-    # Drop all objects into the DB (only for DEV purpose)
-    clean-at-start: true
+    clean-at-start: true # Drop all objects into the DB (only for DEV purpose)
     baseline-on-migrate: true
     table: flyway_quarkus_history
     locations: db/migration
