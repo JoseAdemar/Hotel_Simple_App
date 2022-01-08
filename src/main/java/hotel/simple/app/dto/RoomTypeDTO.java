@@ -1,7 +1,7 @@
 package hotel.simple.app.dto;
 
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -10,18 +10,16 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor
-public class RoomDTO {
+public class RoomTypeDTO {
 	
 	@EqualsAndHashCode.Include
 	private Long id;
+
+	@NotBlank
+	@Size(max = 50)
+	private String name;
 	
-	@NotNull
-	@Min(value = 0)
-	private Integer number;
-	
-	@NotNull
-	private Long roomTypeId;
-	
-	private String roomTypeName;
+	@Size(max = 100)
+	private String description;
 
 }

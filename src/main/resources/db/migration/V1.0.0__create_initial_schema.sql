@@ -7,7 +7,16 @@ CREATE TABLE guest(
 	phone_number VARCHAR(25)
 );
 
+CREATE TABLE room_type(
+	id BIGINT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(50) NOT NULL UNIQUE,
+	description VARCHAR(100)
+);
+
 CREATE TABLE room(
 	id BIGINT PRIMARY KEY AUTO_INCREMENT,
-	number INT NOT NULL UNIQUE
+	number INT NOT NULL UNIQUE,
+	room_type_id BIGINT NOT NULL,
+	
+	FOREIGN KEY (room_type_id) REFERENCES room_type(id)
 );
