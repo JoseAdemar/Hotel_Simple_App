@@ -21,7 +21,7 @@ import org.jboss.logging.Logger;
 import hotel.simple.app.dto.RoomTypeDTO;
 import hotel.simple.app.service.RoomTypeService;
 
-@Path("/api/roomType-types")
+@Path("/api/room-types")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class RoomTypeResource {
