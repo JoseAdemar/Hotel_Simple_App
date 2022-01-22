@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class RoomTypeDTO {
 	
-	@EqualsAndHashCode.Include
+    @EqualsAndHashCode.Include
 	private Long id;
 
 	@NotBlank

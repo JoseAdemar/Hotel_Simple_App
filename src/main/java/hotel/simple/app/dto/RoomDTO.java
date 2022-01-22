@@ -22,6 +22,6 @@ public class RoomDTO {
 	@NotNull
 	private Long roomTypeId;
 	
-	private String roomTypeName;
+	//private String roomTypeName;
 
 }
