@@ -10,7 +10,7 @@ quarkus:
     dialect: org.hibernate.dialect.MySQL8Dialect
     jdbc:
       timezone: UTC
-    
+       
   # Flyway minimal config properties
   flyway:
     migrate-at-start: true
@@ -26,3 +26,9 @@ quarkus:
     # schemas: TEST_SCHEMA
     # sql-migration-prefix: X
     # repeatable-sql-migration-prefix: K
+ 
+
+
+
+ 
+ 

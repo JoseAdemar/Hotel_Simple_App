@@ -15,13 +15,12 @@ public class RoomDTO {
 	@EqualsAndHashCode.Include
 	private Long id;
 	
-	@NotNull
+	@NotNull(message = "This field can't be null")
 	@Min(value = 0)
 	private Integer number;
 	
 	@NotNull
 	private Long roomTypeId;
 	
-	//private String roomTypeName;
 
 }

@@ -10,12 +10,13 @@ import hotel.simple.app.entity.Room;
 public interface RoomMapper extends GenericMapper<RoomDTO, Room> {
 	
 	@Mapping(target = "roomTypeId", source = "roomType.id")
-	//@Mapping(target = "roomTypeName", source = "roomType.name")
 	@Mapping(target = "number", source = "number")
+	
 	public RoomDTO toDto(Room room);
 	
 	@Mapping(target = "number", source = "number")
 	@Mapping(target = "roomType.id", source = "roomTypeId")
+	
 	Room toEntity(RoomDTO roomDTO);
 
 }

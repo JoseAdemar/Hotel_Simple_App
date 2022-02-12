@@ -15,7 +15,7 @@ public class RoomTypeDTO {
     @EqualsAndHashCode.Include
 	private Long id;
 
-	@NotBlank
+	@NotBlank(message = "this field can not be null")
 	@Size(max = 50)
 	private String name;
 	
