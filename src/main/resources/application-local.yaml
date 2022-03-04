@@ -2,7 +2,7 @@ quarkus:
   datasource:
     db-kind: mysql 
     username: root
-    password: 123456
+    password: root
     jdbc:
       url: jdbc:mysql://localhost:3306/hotel_simple_app?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
       driver: com.mysql.cj.jdbc.Driver
